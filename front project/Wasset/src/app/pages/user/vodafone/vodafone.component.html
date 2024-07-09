@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Confirmation</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .navbar {
+        background-color: #ffffff; /* Gray background color */
+        color: #fff; /* Text color */
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+      }
+
+      .payment-form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .payment-form img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        font-weight: bold;
+      }
+
+      .btn-confirm {
+        width: 100%;
+        background-color: #016A70;
+        color: #fff;
+        border: none;
+      }
+
+      .btn-confirm:hover {
+        background-color: #016A70;
+      }
+    </style>
+  </head>
+  <body id="cont">
+    <nav class="navbar navbar-expand-lg navbar-dark" id="cont">
+      <div class="container" >
+        <a
+          class="navbar-brand"
+          href="https://accept.paymob.com/portal2/en/orders"
+          >
+          <!-- <img src="/assets/Screenshot2024-03-23085057.png"  alt=""/> -->
+        
+        </a>
+      </div>
+    </nav>
+<br><br><br><br> 
+    <div class="container">
+      <div class="payment-form" style="height: 520px;">
+        <img height="130px" width="400px" src="../../../../assets/img/wallpaperflare.com_wallpaper.jpg"  alt="Payment Image" />
+
+        <!-- <div class="form-group">
+          <label for="walletNumber">Wallet Number</label>
+          <p id="walletNumber">01010101010</p>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Amount To Pay</label>
+          <p id="amount">6000.00 EGP</p>
+        </div>
+
+        <div class="form-group">
+          <label for="pin">Your Pin</label>
+          <input type="text" id="pin" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="otp">OTP</label>
+          <input type="text" id="otp" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-confirm" (click)="VodafoneRequestt()">
+          Confirm
+        </button>
+         -->
+
+        <form #paymentForm="ngForm" (ngSubmit)="submitPaymentForm()">
+          <div class="form-group">
+            <label for="walletNumber">Wallet Number</label>
+            <p id="walletNumber">01010101010</p>
+          </div>
+        
+          <div class="form-group">
+            <label for="amount">Amount To Pay</label>
+            <p id="amount">{{apartmentPrice}} EGP</p>
+          </div>
+          <!-- <div class="form-group">
+            <label for="amount">Amount To Pay</label>
+            <p id="amount">{{ apartmentPrice  }}</p>
+          </div> -->
+          
+          <div class="form-group">
+            <label for="pin">Your Pin</label>
+            <input type="text" id="pin" class="form-control" required [(ngModel)]="pin" name="pin" #pinInput="ngModel" />
+          </div>
+        
+          <div class="form-group">
+            <label for="otp">OTP</label>
+            <input type="text" id="otp" class="form-control" required [(ngModel)]="otp" name="otp" #otpInput="ngModel" />
+          </div>
+        
+          <button type="submit" class="btn btn-confirm" [disabled]="!paymentForm.valid"(click)="VodafoneRequestt()">
+            Confirm
+          </button>
+        </form>
+        
+      </div>
+    </div>
+    <br><br> 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

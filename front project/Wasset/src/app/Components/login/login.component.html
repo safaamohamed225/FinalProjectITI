@@ -1,0 +1,56 @@
+
+
+<br><br><br><br><br><br><br><br><br> <br><br><br> <br><br><br><br><br><br>
+
+   <div class="signup__container">
+    <div class="container__child signup__thumbnail">
+        <div class="thumbnail__logo ">
+            <img src="../../../assets/img/logo.png">
+        </div>
+        <div class="thumbnail__content text-center m-auto">
+            <h1 class="heading--primary">Welcome to Wasset</h1>
+        </div>
+        <div class="signup__overlay"></div>
+    </div>
+    <div class="container__child signup__form">
+      <div *ngIf="errMsg" class="alert alert-danger">
+        Signup failed!<br /> {{errMsg}}
+      </div>
+        <form [formGroup]="loginForm" (ngSubmit)="handleloginForm(loginForm)">
+            <br><br>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" name="email" id="email" placeholder="Enter Email" required formControlName="email" />
+  
+                <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+                  <P class="errColor" *ngIf="loginForm.get('email')?.getError('required')">*Email Is Requrired</P>
+                  <P class="errColor" *ngIf="loginForm.get('email')?.getError('email')">*Enter valid email</P>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" name="password" id="password" placeholder="********" required formControlName="password"/>
+                <div  *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+                  <P class="errColor" *ngIf="loginForm.get('password')?.getError('required')">*Password Is Requrired</P>
+                  <P class="errColor" *ngIf="loginForm.get('password')?.getError('pattern')">*Invalid Password format</P>
+                </div>
+            </div>
+            <br>
+            <div>
+                <!-- (click)="handleloginForm(loginForm)" -->
+              <button class="btn btn--form" type="submit" value="Login" (click)="loginForm.markAllAsTouched()">Login
+                  <div *ngIf="isLoading" class="loader">
+                      <div class="loader-inner">
+                          <div class="circle"></div>
+                      </div>
+                      <span *ngIf="!isLoading" >Login</span>
+                  </div>
+              </button>
+              <br>
+                <a class="signup__link"routerLink="/register" routerLinkActive="active">Not Have account ?</a>
+            </div>
+        </form>
+    </div>
+  </div>   
+  <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br><br>

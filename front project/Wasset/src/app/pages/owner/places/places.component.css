@@ -1,0 +1,45 @@
+td{
+    color: black;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+
+  .table {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+
+  .table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; 
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #ffffff; 
+  }
+  
+  /* Hover effect for table rows */
+  .table tbody tr:hover {
+    background-color: #e2e6ea; /* Light blue */
+  }
+  
+  /* Style for table header */
+  .table thead th {
+    background-color: #343a40; /* Dark gray */
+    color: #ffffff; /* White text */
+  }
+  
+  /* Border radius for buttons inside table cells */
+  .table tbody tr td button {
+    border-radius: 4px;
+  }
+  
+  /* Add margin to buttons inside table cells */
+  .table tbody tr td button {
+    margin: 2px;
+  }
+  
+  

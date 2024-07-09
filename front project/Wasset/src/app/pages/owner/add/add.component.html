@@ -1,0 +1,108 @@
+ <br><br><br><br><br>
+<div class="container">
+  <form [formGroup]="AddForm" class="needs-validation" novalidate (ngSubmit)="AddPlaces()" >
+    <fieldset>
+      <legend class="cen alert alert-success" >Add Places</legend>
+      <div class="form-group row">
+        <label for="Description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Description" formControlName="Description">
+          <div *ngIf="AddForm.controls.Description.invalid && AddForm.controls.Description.touched" class="text-danger">
+            <span *ngIf="AddForm.controls.Description.errors?.['required']">Description is required</span>
+            <span *ngIf="AddForm.controls.Description.errors?.['maxlength']">Description should be maximum 500 characters</span>
+          </div>
+      </div>
+      </div>
+      <div class="form-group row">
+        <label for="Region" class="col-sm-2 col-form-label">Region</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Region" formControlName="Region">
+          <div *ngIf="AddForm.controls.Region.invalid && AddForm.controls.Region.touched" class="text-danger">
+            <span *ngIf="AddForm.controls.Region.errors?.['required']">Region is required</span>
+            <span *ngIf="AddForm.controls.Region.errors?.['maxlength']">Region should be maximum 100 characters</span>
+          </div>
+      </div>
+      </div>
+      <div class="form-group row">
+        <label for="NumofRoom" class="col-sm-2 col-form-label">Num of Rooms</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="NumofRoom" formControlName="NumofRoom">
+          <div *ngIf="AddForm.controls.NumofRoom.invalid && AddForm.controls.NumofRoom.touched" class="text-danger">
+            <span *ngIf="AddForm.controls.NumofRoom.errors?.['required']">Number of rooms is required</span>
+            <span *ngIf="AddForm.controls.NumofRoom.errors?.['min']">Number of rooms cannot be negative or Zero</span>
+            <span *ngIf="AddForm.controls.NumofRoom.errors?.['notNumber']">Number of rooms must be a number</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="ApartmentPrice" class="col-sm-2 col-form-label">ApartmentPrice</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ApartmentPrice" formControlName="ApartmentPrice">
+          <div *ngIf="AddForm.controls.ApartmentPrice.invalid && AddForm.controls.ApartmentPrice.touched" class="text-danger">
+            <span *ngIf="AddForm.controls.ApartmentPrice.errors?.['required']">ApartmentPrice is required</span>
+            <span *ngIf="AddForm.controls.ApartmentPrice.errors?.['min']">ApartmentPrice cannot be negative or Zero</span>
+            <span *ngIf="AddForm.controls.ApartmentPrice.errors?.['notNumber']">ApartmentPrice must be a number</span>
+          </div>
+      </div>
+      </div>
+      <div class="form-group row">
+        <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="GenderOfStudents" formControlName="GenderOfStudents">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <div *ngIf="AddForm.controls.GenderOfStudents.invalid && AddForm.controls.GenderOfStudents.touched" class="text-danger">
+            <span *ngIf="AddForm.controls.GenderOfStudents.errors?.['required']">Gender is required</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="Location" class="col-sm-2 col-form-label">Location</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Location" formControlName="Location">
+          <div *ngIf="AddForm.controls.Location.invalid && AddForm.controls.Location.touched" class="text-danger">
+            <span *ngIf="AddForm.controls.Location.errors?.['required']">Location is required</span>
+            <span *ngIf="AddForm.controls.Location.errors?.['maxlength']">Location should be maximum 100 characters</span>
+          </div>
+      </div>
+      </div>
+      <div class="form-group row">
+        <label for="Capacity" class="col-sm-2 col-form-label">Capacity</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control " id="Capacity" formControlName="Capacity">
+          <div *ngIf="AddForm.controls.Capacity.invalid && AddForm.controls.Capacity.touched" class="text-danger">
+            <span *ngIf="AddForm.controls.Capacity.errors?.['required']">Capacity is required</span>
+            <span *ngIf="AddForm.controls.Capacity.errors?.['min']">Capacity cannot be negative or Zero</span>
+            <span *ngIf="AddForm.controls.Capacity.errors?.['notNumber']">Capacity must be a number</span>
+
+          </div>
+        </div>
+      </div> 
+
+
+      <div class="form-group row">
+      <label for="images" class="col-sm-2 col-form-label w-25 h-25">images</label>
+      <div class="col-sm-10">
+        <input type="file" (change)="onFileSelected($event)" formControlName="images" accept="image/*" multiple>
+        <div class="text-danger" *ngIf="AddForm.controls.images.invalid && AddForm.controls.images.touched">
+          <span *ngIf="AddForm.controls.images.errors?.['required']">At least one images is required</span>
+        </div>
+      </div>
+    </div>  
+
+       <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+          <div *ngIf="AddForm.invalid && (AddForm.dirty || AddForm.touched)" class="text-danger">Please correct the errors in the form.</div>
+          <button type="submit" class="btn btn-primary" [disabled]="AddForm.invalid ">Add</button>  
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <br>
+  <button class="btn btn-info"><a routerLink="/places" class="btn btn-info">Back to Places</a></button>
+</div>
+<br><br> 
+

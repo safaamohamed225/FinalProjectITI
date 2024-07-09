@@ -1,0 +1,245 @@
+<br><br><br><br><br><br>
+
+<div class="container">
+  <form [formGroup]="AddForm" (ngSubmit)="UpdatePlaces()">
+    <fieldset>
+      <legend class="cen">Update Places</legend>
+
+      <br>
+      <div class="row">
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="description" formControlName="description">
+          @if(AddForm.controls.description.invalid){
+          <div class="text-danger">description Not Vaild</div>
+          }
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <label for="location" class="col-sm-2 col-form-label">Location</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="location" formControlName="location">
+          @if(AddForm.controls.location.invalid){
+          <div class="text-danger">location Not Vaild</div>
+          }
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <label for="region" class="col-sm-2 col-form-label">Region</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="region" formControlName="region">
+          @if(AddForm.controls.region.invalid){
+          <div class="text-danger">region Not Vaild</div>
+          }
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <label for="apartmentPrice" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="apartmentPrice" formControlName="apartmentPrice">
+          @if(AddForm.controls.apartmentPrice.invalid){
+          <div class="text-danger">price Not Vaild</div>
+          }
+
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <label for="capacity" class="col-sm-2 col-form-label">Capacity</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="capacity" formControlName="capacity">
+          @if(AddForm.controls.capacity.invalid){
+          <div class="text-danger">capacity Not Vaild</div>
+          }
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <label for="genderOfStudents" class="col-sm-2 col-form-label">Gender</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="genderOfStudents" formControlName="genderOfStudents">
+          @if(AddForm.controls.genderOfStudents.invalid){
+          <div class="text-danger">gender Not Vaild</div>
+          }
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <label for="numofRoom" class="col-sm-2 col-form-label">Num of Room</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="numofRoom" formControlName="numofRoom">
+          @if(AddForm.controls.numofRoom.invalid){
+          <div class="text-danger">num ofroom Not Vaild</div>
+          }
+        </div>
+      </div>
+
+      <!-- <br>
+      <div class="row">
+        <label for="phone" class="col-sm-2 col-form-label">phone</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phone" formControlName="phone">
+          @if(AddForm.controls.phone.invalid){
+            <div class="text-danger">phone Not Vaild</div>
+          }
+        </div>
+      </div> -->
+
+      <br>
+      <!-- <div class="form-group row">
+        <label for="image" class="col-sm-2 col-form-label w-25 h-25">Images</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control" id="image" formControlName="img" multiple>
+          <div class="text-danger" *ngIf="AddForm.controls.img.invalid && AddForm.controls.img.touched">
+            <span *ngIf="AddForm.controls.img.errors?.['required']">At least one image is required</span>
+          </div>
+        </div>
+      </div> -->
+      <br>
+      <button type="submit" class="btn btn-primary" 
+        [disabled]="AddForm.invalid">Update</button>
+
+    </fieldset>
+  </form>
+  <br>
+  <button type="button" class="btn btn-info"><a routerLink="/places" class="btn btn-info">Back to Places</a></button>
+
+</div>
+<br><br><br><br><br><br>
+
+
+
+
+<!-- 
+<br><br><br><br><br><br>
+
+<div class="container">
+  <form [formGroup]="AddForm">
+    <fieldset>
+      <legend class="cen">Update Places</legend>
+
+      <br>
+
+      <br>
+
+      <div class="row">
+        <label for="description" class="col-sm-2 col-form-label">description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="description" formControlName="description">
+          @if(AddForm.controls.description.invalid){
+            <div class="text-danger">description Not Vaild</div>
+          }
+        </div>
+      </div>
+      
+     <br>
+     <div class="row">
+      <label for="location" class="col-sm-2 col-form-label">location</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="location" formControlName="location">
+        @if(AddForm.controls.location.invalid){
+          <div class="text-danger">location Not Vaild</div>
+        }
+      </div>
+    </div>
+    
+   <br>
+   <div class="row">
+    <label for="region" class="col-sm-2 col-form-label">region</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="region" formControlName="region">
+      @if(AddForm.controls.region.invalid){
+        <div class="text-danger">region Not Vaild</div>
+      }
+    </div>
+  </div>
+  
+ <br>
+
+      <div class="row">
+        <label for="price" class="col-sm-2 col-form-label">price</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="price" formControlName="price">
+          @if(AddForm.controls.price.invalid){
+            <div class="text-danger">price Not Vaild</div>
+          }
+          
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <label for="capacity" class="col-sm-2 col-form-label">capacity</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="capacity" formControlName="capacity">
+          @if(AddForm.controls.capacity.invalid){
+            <div class="text-danger">capacity Not Vaild</div>
+          }
+        </div>
+      </div>
+      
+      <br>
+
+      <div class="row">
+        <label for="gender" class="col-sm-2 col-form-label">gender</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="gender" formControlName="gender">
+          @if(AddForm.controls.gender.invalid){
+            <div class="text-danger">gender Not Vaild</div>
+          }
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <label for="numofroom" class="col-sm-2 col-form-label">numofroom</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="numofroom" formControlName="numofroom">
+          @if(AddForm.controls.numofroom.invalid){
+            <div class="text-danger">num ofroom Not Vaild</div>
+          }
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <label for="phone" class="col-sm-2 col-form-label">phone</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phone" formControlName="phone">
+          @if(AddForm.controls.phone.invalid){
+            <div class="text-danger">phone Not Vaild</div>
+          }
+        </div>
+      </div>
+      
+      <br>
+      <div class="form-group row">
+        <label for="image" class="col-sm-2 col-form-label w-25 h-25">Images</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control" id="image" formControlName="img" multiple>
+          <div class="text-danger" *ngIf="AddForm.controls.img.invalid && AddForm.controls.img.touched">
+            <span *ngIf="AddForm.controls.img.errors?.['required']">At least one image is required</span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary" (click)="UpdatePlaces()" [disabled]="AddForm.invalid">Update</button>
+
+    </fieldset>
+  </form>
+<br>
+  <button type="button" class="btn btn-info"><a routerLink="/places" class="btn btn-info">Back to Places</a></button>
+
+</div>
+<br><br><br><br><br><br> -->

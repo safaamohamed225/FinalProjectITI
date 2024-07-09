@@ -1,0 +1,45 @@
+
+ <div class="single-product mt-150 mb-150">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-5">
+              <div class="single-product-img " >
+                  <owl-carousel-o [options]="customOptions">
+                      <ng-container *ngFor="let img of Places.images">
+                        <ng-template carouselSlide>
+                          <img [src]="img" alt="Apartment Image" class="carousel-image" >
+                        </ng-template>
+                      </ng-container>
+                    </owl-carousel-o>
+                    
+                  <!-- <img height="500px" width="500px" src="assets/img/products/s2.jpg" alt=""> -->
+                  <!-- <img height="500px" width="500px" [src]="appartment.img" alt=""> -->
+                  <!-- <div style="position: absolute; width: 94%; height:30px; top: 50%; background-color: red; text-align: center; color: white; font-weight: bold; z-index: 1;" *ngIf="Places.isRented">Rented</div> -->
+              </div>
+          </div>
+          <div class="col-md-7">
+              <div class="single-product-content">
+                  <h3>{{Places.region}} </h3>
+
+                  <div class="single-product-form">
+                      
+                      <p class="single-product-price"><span><b>Description: </b>{{Places.description}}</span></p>
+                      <p class="single-product-price"><span><b>Location: </b>{{Places.location}}</span></p>
+
+                      <p class="single-product-price"><span><b>The number of rooms: </b>{{Places.numofRoom}}</span></p>
+                      <p class="single-product-price"><span><b>The number of student: </b>{{Places.capacity}}</span></p>
+                      <p class="single-product-price"><span><b>Gender: </b>{{Places.genderOfStudents}}</span></p>
+                      <p class="single-product-price"><span><b>Price: </b>{{ Places.apartmentPrice | currency: 'EGP' }}</span></p>
+                      <!-- <p class="single-product-price"><span><b> Phone: </b>{{appartment.phone}}</span></p> -->
+                      <!-- <div class="btn btn-danger" *ngIf="appartment.isRented">Is Rented</div> -->
+                      <!-- <button class="btn btn-secondary">Rent</button> -->
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <button type="button" class="boxed-btn "><a style="color: white;" routerLink="/allpost">Back </a></button>
+
+  </div>
+
+</div>

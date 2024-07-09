@@ -1,0 +1,101 @@
+<br />
+<br />
+<br />
+
+
+
+<div class="container-fluid m-0 p-0">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3" >
+      <div #div class="bg-dark text-light d-flex flex-column done h-100 w-75" style="background-color: #016A70 !important;">
+        <div class="">
+          <h3 class="text-light text-center m-3">Menu</h3>
+        </div>
+        <div  class="onhov p-2 bg-secondary text-start b mt-5" routerLink="/students"style="background-color:#051922 !important;cursor: pointer">
+          <i class="fas fa-solid fa-graduation-cap"></i> Students
+        </div>
+        <div  class="onhov p-2 bg-secondary text-start mt-3" routerLink="/allpost"style="background-color: #051922 !important; cursor: pointer">
+          <i class="fas fa-building"></i> Apartments
+        </div>
+        <div  class="onhov p-2 bg-secondary text-start mt-3" routerLink="/listowner"style="background-color: #051922 !important;cursor: pointer">
+          <i class="fas fa-solid fa-crown"></i> Owners
+        </div>
+      </div>
+    
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-9 p-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Approval</h5>
+              <p class="card-text">Approve pending requests.</p>
+              <a class="boxed-btn" style="border-radius: 5px" routerLink="/approval">Approve</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Pending</h5>
+              <p class="card-text">View pending requests.</p>
+              <a class="boxed-btn" style="border-radius: 5px" routerLink="/pendingadmin">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<br>
+
+      <div class="container">
+        <h3 class="text-center mb-4">List of Places</h3>
+
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Region</th>
+              <th scope="col">Price</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Number of Room</th>
+              <!-- <th scope="col">Image</th> -->
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="
+                let app of notApprovedAppartment
+                  | paginate : { itemsPerPage: 5, currentPage: p }
+              " class="custom-table-row table-info">
+              <td>{{ app.region }}</td>
+              <td>{{ app.apartmentPrice }} EGP</td>
+              <td>{{ app.genderOfStudents }}</td>
+              <td>{{ app.numofRoom }}</td>
+              <td>{{ app.status }}</td>
+ <td>
+   
+  <button type="button" class="btn btn-outline-info m-2" [routerLink]="'/approval/' + app.apartmentId">
+    Details
+  </button>
+ </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="pagination d-flex justify-content-center mt-5">
+              <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="">
+              </pagination-controls>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+    

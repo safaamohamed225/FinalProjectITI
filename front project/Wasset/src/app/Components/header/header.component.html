@@ -1,0 +1,59 @@
+	<!-- header -->
+	<div class="top-header-area " id="sticker" style="height: 80px; background-color: #051922; ">
+		<div class="container ">
+			<div class="row ">
+				<div class=" col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap ">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index_2.html">
+								
+								<img  src="assets/img/logo.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu ">
+							<ul>
+								<!--*ngIf="isLogin"  -->
+								<li *ngIf=" isStd" ><a  routerLink="/home" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="current-list-item"  >Home</a>
+
+                                </li>
+								<!--*ngIf="isLogin"  -->
+								<li *ngIf="isLogin && isStd"><a  routerLink="/hosing" routerLinkActive="active" >Housing</a></li>
+								<!--*ngIf="isLogin"  -->
+								<li *ngIf="isLogin && isStd" ><a  routerLink="/about" routerLinkActive="active" >About</a></li>
+								<!--*ngIf="isLogin"  -->
+								<li *ngIf=" !isStd && !isadmin " ><a  routerLink="/places" routerLinkActive="active" >Home</a></li>
+
+								<li *ngIf="isLogin && !isadmin"  ><a  routerLink="/contact" routerLinkActive="active" >Contact</a></li>
+								<li *ngIf="isLogin && isStd" ><a  routerLink="/dashboard" routerLinkActive="active" >Request</a></li>
+								<li>
+									
+									<div class="header-icons ">
+										<a routerLink="/login" *ngIf="!isLogin" class="boxed-btn m-1" style="height: 47px; border-radius: 5px;">Login</a>
+										<!-- *ngIf="!isLogin" -->
+										<a *ngIf="!isLogin" routerLink="/register" routerLinkActive="active" class="bordered-btn "style="height: 47px; border-radius: 5px;" >Register</a>
+										<!-- *ngIf="isLogin" -->
+										<a *ngIf="isLogin">Welcome: <b>{{userName}}</b></a>
+										<a *ngIf="isLogin" (click)="logout()" class="boxed-btn " style="height: 47px; border-radius: 5px;">Logout</a>
+									</div>
+									
+								</li>
+							</ul>
+						</nav>
+						<!-- <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a> -->
+
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- end header -->
+
+
+	

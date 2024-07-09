@@ -1,0 +1,76 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Quickly find housing</p>
+                    <h1>Housing</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- products -->
+<div class="product-section mt-150 mb-150">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-filters">
+                    <ul>
+                        <li [ngClass]="{'active-link': isActive('/hosing'), 'clicked': activeButton === 'All' }">
+                            <a (click)="activeButton = 'All'" routerLink="/hosing" style="color: black;">All</a>
+                          </li>
+                          <li [ngClass]="{'active-link': isActive('/housingmale'), 'clicked': activeButton === 'Male' }">
+                            <a (click)="activeButton = 'Male'" routerLink="/housingmale" style="color: black;">Male</a>
+                          </li>
+                          <li style="background-color: #016A70; border: #016A70;" [ngClass]="{'active-link': isActive('/housingfemale'), 'clicked': activeButton === 'Female' }">
+                            <a (click)="activeButton = 'Female'" routerLink="/housingfemale" style="color: black;">Female</a>
+                          </li>
+                          
+                        <!-- <div class="search-bar-tablecell">
+                            <input type="text" placeholder="Male/Female" #ser style="background-color: rgb(96, 96, 117);">
+                        </div> -->
+                        <!-- (click)="onSearch(ser.value)" -->
+                        <!-- <a class="mobile-hide search-bar-icon" ><i
+                                class="fas fa-search"></i></a> -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row product-lists">
+           
+                  <div class="col-lg-4 col-md-6 text-center " *ngFor="let app of appartment | paginate: { itemsPerPage: 6, currentPage: p }"> 
+                    <!-- |search'' -->
+                    <div class="single-product-item">
+                        <div class="product-image">
+                          <a (click)="openDetails(app.apartmentId)" routerLinkActive="active"><img [src]="app.imageUrls[0]" alt=""></a>
+                        </div>
+                        <p class="single-product-price"><span><b>Price: </b>{{ app.apartmentPrice | currency: 'EGP' }}</span></p>
+                        <p class="product-price">{{app.genderOfStudents}} </p>
+                        <a (click)="openDetails(app.apartmentId)" routerLinkActive="active" class="cart-btn m-1"><i class="fas fa-info-circle"></i> View Details</a>
+                        <!-- <a href="tel:{{app.phone}}" class="cart-btn"><i class="fas fa-phone"></i>Contact him</a> -->
+                      </div>
+                </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="pagination d-flex justify-content-center mt-5">
+                    <pagination-controls 
+                    (pageChange)="p = $event" 
+                    previousLabel="" 
+                    nextLabel="" >
+                </pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end products -->
+

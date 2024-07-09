@@ -1,0 +1,122 @@
+
+<!-- hero area -->
+<div class="hero-area hero-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 offset-lg-2 text-center">
+        <div class="hero-text">
+          <div class="hero-text-tablecell">
+            <p class="subtitle">help students</p>
+            <h1>We help students find the best suitable places</h1>
+            <div class="hero-btns">
+              <a routerLink="/hosing" routerLinkActive="active" class="boxed-btn">Visit places</a>
+              <a routerLink="/contact" routerLinkActive="active" class="bordered-btn">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end hero area -->
+
+<!-- features list section -->
+<div class="list-section pt-80 pb-80">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <div class="list-icon">
+            
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <div class="content">
+            <h3>Fast</h3>
+            <p>Quickly find housing</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <div class="list-box d-flex align-items-center">
+          <div class="list-icon">
+            <i class="fas fa-phone-volume"></i>
+          </div>
+          <div class="content">
+            <h3>Support</h3>
+            <p>Get support all day</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="list-box d-flex justify-content-start align-items-center">
+          <div class="list-icon">
+            <i class="fas fa-sync"></i>
+          </div>
+          <div class="content">
+            <h3>Find</h3>
+            <p>Find the best accommodation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end features list section -->
+
+<!-- product section -->
+<div class="product-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="section-title">
+          <h3><span class="orange-text">Our</span> Housing</h3>
+          <p>Explore our diverse range of housing options tailored to your needs and preferences.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 text-center offset-lg-0 text-center " *ngFor="let app of appartment ">
+        <!-- |search'' -->
+        <div class="single-product-item">
+            <div class="product-image">
+              <a (click)="openDetails(app.apartmentId)" routerLinkActive="active"><img [src]="app.imageUrls[0]" alt=""></a>
+            </div>
+            <p class="single-product-price"><span><b>Price: </b>{{ app.apartmentPrice | currency: 'EGP' }}</span></p>
+            <p class="product-price">{{app.genderOfStudents}} </p>
+            <a (click)="openDetails(app.apartmentId)" routerLinkActive="active" class="cart-btn m-1"><i class="fas fa-info-circle"></i> View Details</a>
+            <!-- <a href="tel:{{app.phone}}" class="cart-btn"><i class="fas fa-phone"></i>Contact him</a> -->
+          </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!-- end product section -->
+
+
+<!-- advertisement section -->
+<div class="abt-section mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <div class="abt-bg">
+          <a href="#" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="abt-text">
+          <p class="top-sub">Since Year 2024</p>
+          <h2>We are <span class="orange-text">Housing</span></h2>
+          <p>Discover top-quality housing solutions tailored to your needs. Our commitment since 2024 has been to provide exceptional housing options that meet your requirements.</p>
+          <p>With a focus on customer satisfaction and quality, we strive to make your housing experience seamless and enjoyable.</p>
+          <a routerLink="/about" routerLinkActive="active" class="boxed-btn mt-4">know more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end advertisement section -->
+

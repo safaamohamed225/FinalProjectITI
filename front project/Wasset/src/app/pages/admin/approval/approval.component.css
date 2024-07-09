@@ -1,0 +1,19 @@
+.custom-table-row td {
+    color: black !important;
+}
+.MyClass {
+    left: -100%;
+  }
+  .onhov:hover {
+    padding-left: 20px !important ;
+    transition: 0.3s all ease-in-out;
+  }
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+
+  .table {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }

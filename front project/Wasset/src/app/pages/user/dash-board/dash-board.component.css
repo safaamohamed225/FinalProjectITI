@@ -1,0 +1,34 @@
+.overlay-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.overlay-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.overlay-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-layer a {
+    padding: 10px 20px;
+    background-color: rgb(1, 106, 112,.7);
+        color: #e8dbdb;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.overlay-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+.overlay-wrapper:hover .overlay-layer {
+    opacity: 1;
+}

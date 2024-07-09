@@ -1,0 +1,217 @@
+<br><br><br><br>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">All Rents</h5>
+          <p class="card-text">View all rented places.</p>
+          <a class="boxed-btn " style=" border-radius: 5px;" routerLink="/allrents">View</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Approval</h5>
+          <p class="card-text">Approve pending requests.</p>
+          <a class="boxed-btn " style=" border-radius: 5px;" routerLink="/approvalowner">Approve</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Pending</h5>
+          <p class="card-text">View pending requests.</p>
+          <a class="boxed-btn " style=" border-radius: 5px;" routerLink="/pendingowner">View</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Rejected</h5>
+          <p class="card-text">View all Rejected places.</p>
+          <a class="boxed-btn " style=" border-radius: 5px;" routerLink="/reject">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-12">
+<br>
+      <h3 class="text-center mb-4">List of Places</h3>
+      <a class="boxed-btn ml-5 " style="border-radius: 5px; width: 150px;" routerLink="/addplaces">
+        <i class="fas fa-plus-circle"></i> Add Place
+      </a>
+      <br><br>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Region</th>
+            <th scope="col">Price</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Number of Rooms</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of Places | paginate: { itemsPerPage: 5, currentPage: p }" class="table-info">
+            <td>{{ p.region }}</td>
+            <td>{{ p.apartmentPrice }} EGP</td>
+            <td>{{ p.genderOfStudents }}</td>
+            <td>{{ p.numofRoom }}</td>
+            <td>{{ p.status }}</td>
+            <td>
+              <button type="button" class="btn btn-info m-1" [routerLink]="'/places/' + p.apartmentId">
+                <i class="fas fa-info-circle"></i>
+              </button>
+              <button type="button" class="btn btn-success m-1" [routerLink]="'/updateplaces/' + p.apartmentId">
+               
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+              <button type="button" class="btn btn-danger" (click)="deleteplaces(p.apartmentId)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="pagination d-flex justify-content-center mt-5">
+            <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row mt-4">
+    <div class="col-lg-12 text-center">
+      <a class="boxed-btn ml-5 " style=" border-radius: 5px;" routerLink="/addplaces">Add Place</a>
+    </div>
+  </div> -->
+</div>
+
+
+<br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!----------------------------------------->
+<!-- <br /><br /><br /><br /><br /><br />
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div class="m-2">
+      <h4 style="background-color:cornflowerblue" class="m-auto text-center">Places</h4>
+
+      <table class="table table-hover border-2">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Price</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Num Of rooms</th>
+
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let p of Places" class="table-primary" appChengeColor>
+            <td>{{ p.price }}</td>
+            <td>{{ p.gender }}</td>
+            <td>{{ p.numofroom }}</td>
+            <td class="text-nowrap">
+              <button
+                type="button"
+                class="btn btn-outline-info m-2"
+                [routerLink]="'/places/' + p.id"
+              >
+                Details
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success m-2"
+                [routerLink]="'/updateplaces/' + p.id"
+              >
+                Update
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-danger m-2"
+                (click)="deleteplaces(p.id)"
+                routerLink="/places"
+              >
+                Delete
+              </button>
+              <button
+                *ngIf="p.requestRent"
+                type="button"
+                class="btn btn-outline-secondary m-2"
+                (click)="accept(p.id)"
+              >
+                Accept
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="m-2">
+      <h4 style="background-color:cornflowerblue" class="m-auto text-center">Accepted Places</h4>
+      <table class="table table-hover border-2">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Price</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Num Of rooms</th>
+
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            *ngFor="let p of AcceptedPlaces"
+            class="table-primary"
+            appChengeColor
+          >
+            <td>{{ p.price }}</td>
+            <td>{{ p.gender }}</td>
+            <td>{{ p.numofroom }}</td>
+            <td class="text-nowrap">
+              <button
+                type="button"
+                class="btn btn-outline-info m-2"
+                (click)="Cancle(p.id)"
+              >
+                Cancel
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a class="btn btn-outline-primary" routerLink="/addplaces">Add Places</a>
+</div>
+<br /><br /><br /> -->
