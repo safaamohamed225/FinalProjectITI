@@ -1,47 +1,47 @@
-#FINAL PROJECT
-# Wasset Website
-- Responsive Website Using HTML, CSS, Bootstrap, JavaScript,Typescript and Angular
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+# 🎓 FINAL PROJECT – ITI  
+## 🏠 Wasset – Housing Services Website  
 
-## [Website Demo](https://wasset-one.vercel.app/home)
+A responsive full-stack web application for housing and property listings, built as a graduation project during the ITI program. Developed using **.NET Core (Backend)** and **Angular 17 (Frontend)**, following best practices in clean architecture and mobile-first design.
 
-![image](https://github.com/Bassam-Serag/Wasset/assets/105117034/2bc919ee-3fe6-48ef-825f-77a33cc1b293)
+---
 
+## 🚀 Live Demo  
+[🔗 View Website](https://wasset-one.vercel.app/home)
 
-### Prerequisites
+![Wasset Screenshot](https://github.com/Bassam-Serag/Wasset/assets/105117034/2bc919ee-3fe6-48ef-825f-77a33cc1b293)
 
-Before you begin, ensure you have met the following requirements:
+---
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+## 🧰 Technologies Used
 
+### 🔹 Frontend
+- Angular 17
+- TypeScript
+- HTML5, CSS3
+- Bootstrap 5
+- Responsive (Mobile First Design)
 
-### Run Locally
+### 🔹 Backend
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server
 
-To run **Wasset Website** locally, run this command on your git bash:
+---
 
-Linux and macOS:
+## 📦 Prerequisites
 
-```bash
-sudo git clone https://github.com/safaamohamed225/Wasset.git
-```
-Windows:
+Before you begin, ensure you have:
+
+- [Git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/) (for Angular)
+- [.NET SDK 8 or higher](https://dotnet.microsoft.com/en-us/download)
+
+---
+
+## 💻 Run Locally
+
+Clone the project:
 
 ```bash
 git clone https://github.com/safaamohamed225/Wasset.git
-```
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-## Code scaffolding
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-## Build
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-## Running unit tests
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-## Running end-to-end tests
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-## Further help
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+cd Wasset
