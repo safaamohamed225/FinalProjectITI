@@ -224,4 +224,4 @@ If you have any questions or need support, please:
 
 ---
 
-**⭐ Don't forget to give this project a star if you found it helpful!**
+**⭐ Don't forget to give this project a star if you found it helpful! ⭐**
