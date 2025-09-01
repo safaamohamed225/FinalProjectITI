@@ -8,6 +8,21 @@
 A comprehensive full-stack web application for housing and property listings, designed to help students find and book accommodation near universities. Built as a graduation project during the ITI (Information Technology Institute) program, showcasing modern web development practices and clean architecture principles.
 
 ![Wasset Screenshot](https://github.com/Bassam-Serag/Wasset/assets/105117034/2bc919ee-3fe6-48ef-825f-77a33cc1b293)
+--------------------------------------------
+## 🌟 Glimpse of the working solution: 🌟
+<img width="1254" height="623" alt="wasset1" src="https://github.com/user-attachments/assets/b4d39e06-add7-4b46-b9d9-112873bad779" />
+
+<img width="1149" height="823" alt="wasset2" src="https://github.com/user-attachments/assets/a2086c4d-d828-47d4-83f7-16e3fde3b10a" />
+
+<img width="1181" height="577" alt="wasset3" src="https://github.com/user-attachments/assets/862b2755-c0da-4c5c-a161-bb14693228ed" />
+
+<img width="1183" height="625" alt="wasset4" src="https://github.com/user-attachments/assets/bfb276b1-ec4d-42dd-8d9a-119b4da54885" />
+
+<img width="1188" height="389" alt="wasset5" src="https://github.com/user-attachments/assets/725b35f3-cb25-434b-ba69-afd65f74e483" />
+
+<img width="1180" height="589" alt="wasset6" src="https://github.com/user-attachments/assets/b52fa587-d3df-4b2f-bba5-32b2215c3f6b" />
+
+
 
 ## 🌟 Features
 
