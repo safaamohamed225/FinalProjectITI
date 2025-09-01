@@ -235,7 +235,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or need support, please:
 - Open an issue on GitHub
 - Contact us at safaa.mohamed.ibrahem@gmail.com
-- Visit our [documentation](https://wasset-one.vercel.app)
 
 ---
 
